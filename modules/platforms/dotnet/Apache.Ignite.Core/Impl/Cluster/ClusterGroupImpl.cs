@@ -146,7 +146,7 @@ namespace Apache.Ignite.Core.Impl.Cluster
         private const int OpGetServices = 34;
 
         /** Initial Ignite instance. */
-        private readonly Ignite _ignite;
+        private readonly IIgniteInternal _ignite;
         
         /** Predicate. */
         private readonly Func<IClusterNode, bool> _pred;
@@ -190,7 +190,7 @@ namespace Apache.Ignite.Core.Impl.Cluster
         /** <inheritDoc /> */
         public IIgnite Ignite
         {
-            get { return _ignite; }
+            get { return _ignite.GetIgnite(); }
         }
 
         /** <inheritDoc /> */
